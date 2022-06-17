@@ -1,9 +1,8 @@
-const body = document.querySelector("body");
 const navButton = document.getElementsByClassName("nav-button");
 const content = document.getElementsByClassName("child-content");
 const sideButton = document.getElementsByClassName("sidebar");
 const headImage = document.querySelector(".top-image");
-
+const nav = document.querySelector("nav");
 for (let i = 0; i < navButton.length; i++) {
   navButton[i].addEventListener("click", (e) => {
     for (let k = 0; k < content.length; k++) {
@@ -11,6 +10,10 @@ for (let i = 0; i < navButton.length; i++) {
     }
     e.preventDefault();
     content[i].classList.toggle("hidden");
+    content[i].classList.add("coming");
+    setTimeout(() => {
+      content[i].classList.remove("coming");
+    }, 600);
   });
 }
 for (let i = 0; i < sideButton.length; i++) {
@@ -20,6 +23,10 @@ for (let i = 0; i < sideButton.length; i++) {
     }
     e.preventDefault();
     content[i].classList.toggle("hidden");
+    content[i].classList.add("coming");
+    setTimeout(() => {
+      content[i].classList.remove("coming");
+    }, 600);
   });
 }
 let mouseover = headImage.addEventListener("mousemove", (e) => {
@@ -29,6 +36,12 @@ let mouseLeave = headImage.addEventListener("mouseleave", (e) => {
   headImage.setAttribute("style", `transform: rotateX(0deg) rotateY(0deg)`);
 });
 
-body.addEventListener("scroll", (e) => {
-  console.log(e.pageYOffset());
+document.addEventListener("scroll", () => {
+  let height = window.pageYOffset;
+  console.log(height);
+  if (height > 80) {
+    nav.classList.add("fixed");
+  } else if (height < 80) {
+    nav.classList.remove("fixed");
+  }
 });

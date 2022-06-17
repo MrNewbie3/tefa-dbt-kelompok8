@@ -58,6 +58,7 @@ nav ul {
   padding: 10px;
   box-sizing: border-box;
   border-radius: 5px;
+  box-shadow: 11px 11px 22px #828282, -11px -11px 22px #ffffff;
 }
 .nav-button:active,
 .sidebar:active {
@@ -71,6 +72,17 @@ nav {
   height: 70px;
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.2);
+}
+.fixed {
+  position: fixed;
+  top: 0%;
+  z-index: 2000;
+  background-color: rgb(172, 172, 172);
+  color: white;
+  animation: scroll 300ms 1;
+}
+.static {
+  animation: static 300ms 1;
 }
 
 nav ul li {
@@ -127,10 +139,29 @@ section.image img {
 .hidden {
   display: none;
 }
+.coming {
+  animation: wellcome 500ms;
+}
 footer {
   height: 40px;
   background-color: rgb(0, 0, 0);
   text-align: center;
   line-height: 40px;
   color: white;
+}
+@keyframes scroll {
+  from {
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+@keyframes wellcome {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
