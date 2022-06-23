@@ -66,7 +66,7 @@ const namadepan = document.getElementById("fname");
 const namaBelakang = document.getElementById("lname");
 const mail = document.getElementById("email");
 const country = document.getElementById("country");
-let getAlert = document.getElementsByClassName("alertName");
+const getAlert = document.getElementsByClassName("alertName");
 
 const button = document.getElementsByClassName("button");
 button[0].addEventListener("click", () => {
@@ -74,10 +74,5 @@ button[0].addEventListener("click", () => {
   let bn = namaBelakang.value;
   let em = mail.value;
   let co = country.value;
-  alert(`Your Name ${name} ${bn} your mail was ${em} and your country is ${co}`);
-
-  console.log(name);
-  console.log(bn);
-  console.log(em);
-  console.log(co);
+  document.getElementById("pID").innerHTML = `Your Name ${name} ${bn} your mail was ${em} and your country is ${co}`;
 });
