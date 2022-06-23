@@ -38,7 +38,6 @@ let mouseLeave = headImage.addEventListener("mouseleave", (e) => {
 
 document.addEventListener("scroll", () => {
   let height = window.pageYOffset;
-  console.log(height);
   if (height > 80) {
     nav.classList.add("fixed");
   } else if (height < 80) {
@@ -61,4 +60,24 @@ particlesJS("particles-js", {
     modes: { grab: { distance: 400, line_linked: { opacity: 1 } }, bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 }, repulse: { distance: 200, duration: 0.4 }, push: { particles_nb: 4 }, remove: { particles_nb: 2 } },
   },
   retina_detect: true,
+});
+
+const namadepan = document.getElementById("fname");
+const namaBelakang = document.getElementById("lname");
+const mail = document.getElementById("email");
+const country = document.getElementById("country");
+let getAlert = document.getElementsByClassName("alertName");
+
+const button = document.getElementsByClassName("button");
+button[0].addEventListener("click", () => {
+  let name = namadepan.value;
+  let bn = namaBelakang.value;
+  let em = mail.value;
+  let co = country.value;
+  alert(`Your Name ${name} ${bn} your mail was ${em} and your country is ${co}`);
+
+  console.log(name);
+  console.log(bn);
+  console.log(em);
+  console.log(co);
 });

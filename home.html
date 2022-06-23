@@ -119,18 +119,18 @@
         </div>
         <div class="container child-content hidden">
           <h3>Form Kontak</h3>
-          <form action="/action_page.php">
+          <form action="">
             <label for="fname">Nama Depan</label>
-            <input type="text" id="fname" name="firstname" placeholder="masukkan nama" />
+            <input type="text" id="fname" name="firstname" placeholder="masukkan nama" required class="formInputNama" />
 
             <label for="lname">Nama Belakang</label>
-            <input type="text" id="lname" name="lastname" placeholder="masukkan nama" />
+            <input type="text" id="lname" name="lastname" placeholder="masukkan nama" required class="formInput" />
 
             <label for="email">E-mail</label>
-            <input type="text" id="email" name="E-mail" placeholder="example@gmail.com" />
+            <input type="text" id="email" name="E-mail" placeholder="example@gmail.com" required class="formInput" />
 
             <label for="country">Negara</label>
-            <select id="country" name="country">
+            <select id="country" name="country" required class="formInput">
               <option value="australia">Australia</option>
               <option value="canada">Canada</option>
               <option value="USA">USA</option>
@@ -143,9 +143,12 @@
             </select>
 
             <label for="Pesan">Pesan</label>
-            <textarea id="subject" name="subject" placeholder="Tuliskan sesuatu" style="height: 200px"></textarea>
+            <textarea id="subject" name="subject" placeholder="Tuliskan sesuatu" style="height: 200px" class="formInput"></textarea>
 
-            <input type="submit" value="Kirim" />
+            <input type="button" value="Kirim" class="button" />
+            <div class="alert">
+              <p class="alertName">your name will shown here!</p>
+            </div>
           </form>
         </div>
       </div>
